@@ -25,6 +25,7 @@ router.all('*', function(req, res,next) {
 })
 
 //数据库接口(商品搜索数据)
+//商品搜索列表
 router.get('/api/goods/search', function(req, res, next) {
 	//desc降序 asc升序 
 	//参考url http://192.168.0.105:3000/api/goods/search?name=MLB&pprice=desc
@@ -57,6 +58,14 @@ router.get('/api/goods/id', function(req, res, next) {
 		res.send({
 			code: 0,
 			data: results
+		})
+	})
+})
+//商品推荐
+router.get('/api/introduce', function(req, res, next) {
+	connection.query(`SELECT * FROM goods_search WHERE id >= ((SELECT MAX(id) FROM goods_search)-(SELECT MIN(id) FROM goods_search)) * RAND() + (SELECT MIN(id) FROM goods_search) LIMIT 4`, function (error, results, fields) {
+		res.send({
+			data:results
 		})
 	})
 })
@@ -714,35 +723,35 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 			{
 				type: 'iconsList',
 				data: [{
-						imgUrl: '../../static/img/icons1.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons1.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons2.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons2.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons3.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons3.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons4.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons4.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons5.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons5.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons6.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons6.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons7.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons7.png',
 						name: '跑步鞋'
 					},
 					{
-						imgUrl: '../../static/img/icons8.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons8.png',
 						name: '跑步鞋'
 					}
 				]
@@ -775,7 +784,7 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 					},
 					{
 						id: 4,
-						imgUrl: '../../static/img/hot1.jpg',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/hot1.jpg.jpg',
 						name: '跑鞋嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，',
 						pprice: '299',
 						oprice: '659',
@@ -783,7 +792,7 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 					},
 					{
 						id: 5,
-						imgUrl: '../../static/img/hot2.jpg',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/hot2.jpg.jpg',
 						name: '跑鞋嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，',
 						pprice: '299',
 						oprice: '659',
@@ -791,7 +800,7 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 					},
 					{
 						id: 6,
-						imgUrl: '../../static/img/hot3.jpg',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/hot3.jpg.jpg',
 						name: '跑鞋嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，',
 						pprice: '299',
 						oprice: '659',
@@ -802,10 +811,10 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 			{
 				type: 'shopList',
 				data: [{
-					bigUrl: '../../static/img/shop.jpg',
+					bigUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop.jpg',
 					data: [{
 							id: 1,
-							imgUrl: '../../static/img/shop1.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop1.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -813,7 +822,7 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 						},
 						{
 							id: 2,
-							imgUrl: '../../static/img/shop2.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop2.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -821,7 +830,7 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 						},
 						{
 							id: 3,
-							imgUrl: '../../static/img/shop3.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop3.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -829,7 +838,7 @@ router.get('/api/index_list/2/data/1', function(req, res, next) {
 						},
 						{
 							id: 4,
-							imgUrl: '../../static/img/shop4.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop4.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -962,35 +971,35 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 			{
 				type: 'iconsList',
 				data: [{
-						imgUrl: '../../static/img/icons1.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons1.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons2.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons2.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons3.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons3.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons4.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons4.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons5.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons5.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons6.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons6.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons7.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons7.png',
 						name: '服饰内衣'
 					},
 					{
-						imgUrl: '../../static/img/icons8.png',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/icons8.png',
 						name: '服饰内衣'
 					}
 				]
@@ -1023,7 +1032,7 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 					},
 					{
 						id: 4,
-						imgUrl: '../../static/img/hot1.jpg',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/hot1.jpg',
 						name: '跑鞋嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，',
 						pprice: '299',
 						oprice: '659',
@@ -1031,7 +1040,7 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 					},
 					{
 						id: 5,
-						imgUrl: '../../static/img/hot2.jpg',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/hot2.jpg',
 						name: '跑鞋嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，',
 						pprice: '299',
 						oprice: '659',
@@ -1039,7 +1048,7 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 					},
 					{
 						id: 6,
-						imgUrl: '../../static/img/hot3.jpg',
+						imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/hot3.jpg',
 						name: '跑鞋嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，嘎嘎好，',
 						pprice: '299',
 						oprice: '659',
@@ -1050,10 +1059,10 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 			{
 				type: 'shopList',
 				data: [{
-					bigUrl: '../../static/img/shop.jpg',
+					bigUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop.jpg',
 					data: [{
 							id: 1,
-							imgUrl: '../../static/img/shop1.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop1.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -1061,7 +1070,7 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 						},
 						{
 							id: 2,
-							imgUrl: '../../static/img/shop2.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop2.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -1069,7 +1078,7 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 						},
 						{
 							id: 3,
-							imgUrl: '../../static/img/shop3.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop3.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',
@@ -1077,7 +1086,7 @@ router.get('/api/index_list/3/data/1', function(req, res, next) {
 						},
 						{
 							id: 4,
-							imgUrl: '../../static/img/shop4.jpg',
+							imgUrl: 'https://gitee.com/l7788/shopApp/raw/master/static/img/shop4.jpg',
 							name: '大款2020年必须买,不买你就不行了,爆款疯狂GG008大款2020年必须买,不买你就不行了,爆款疯狂GG008',
 							pprice: '299',
 							oprice: '659',

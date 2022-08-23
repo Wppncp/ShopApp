@@ -14,19 +14,19 @@
 		</view>
 		<!-- 商品描述图 -->
 		<view>
-			<view><image src="../../static/img/detail1.jpg" class="details-img"></image></view>
-			<view><image src="../../static/img/detail2.jpg" class="details-img"></image></view>
-			<view><image src="../../static/img/detail3.jpg" class="details-img"></image></view>
-			<view><image src="../../static/img/detail4.jpg" class="details-img"></image></view>
-			<view><image src="../../static/img/detail5.jpg" class="details-img"></image></view>
+			<view><image src="https://gitee.com/l7788/shopApp/raw/master/static/img/detail1.jpg" class="details-img"></image></view>
+			<view><image :src="goodsContent.imgUrl" class="details-img"></image></view>
+			<view><image :src="goodsContent.imgUrl" class="details-img"></image></view>
+			<view><image :src="goodsContent.imgUrl" class="details-img"></image></view>
+			<view><image src="https://gitee.com/l7788/shopApp/raw/master/static/img/detail5.jpg" class="details-img"></image></view>
 		</view>
 		<!-- 推荐 -->
 		<Card cardTitle="看了又看"></Card>
 		<commodity-list :dataList="dataList"></commodity-list>
 		<!-- 底部 -->
 		<view class="detail-foot">
-			<view class="iconfont icon-xiaoxi"></view>
-			<view class="iconfont icon-gouwuche" @tap="goShopCar"></view>
+			<view class="iconfont "><view class="icon-xiaoxi" style="transform: scale(1.5);"></view></view> 
+			<view class="iconfont"  @tap="goShopCar"><view class="icon-gouwuche" style="transform: scale(1.5);"></view></view>
 			<view class="add-shopcart" @tap="showPop">加入购物车</view>
 			<view class="purchase" @tap="showPop('key')">立即购买</view>
 		</view>
@@ -63,45 +63,45 @@ export default {
 		return {
 			swiperList: [{ imgUrl: '../../static/img/details1.jpeg' }, { imgUrl: '../../static/img/details2.jpeg' }, { imgUrl: '../../static/img/details3.jpeg' }],
 			dataList: [
-				{
-					id: 5,
-					imgUrl: 'https://img14.360buyimg.com/n1/jfs/t1/162051/30/29828/234714/62f6752bEc6bbe9a9/86c56312f486abb6.jpg',
-					name: '李宁篮球鞋男2022新品中帮专业比赛鞋官方旗舰网ABAS027 月白蓝/标准白-4 42',
-					pprice: '799.00 ',
-					oprice: '3890.00',
-					discount: '满469减80'
-				},
-				{
-					id: 6,
-					imgUrl: 'https://img11.360buyimg.com/n7/jfs/t1/22526/3/19193/50973/62f6267cEe76048de/b2b76bd6da7ff3f3.jpg',
-					name: '阿迪达斯（Adidas）短裤男 新款透气舒适百搭休闲五分裤运动短裤 五分裤-小LOGO L',
-					pprice: '129.00',
-					oprice: '129.00',
-					discount: '每满200减30'
-				},
-				{
-					id: 7,
-					imgUrl: 'https://img11.360buyimg.com/n1/jfs/t1/188134/20/7134/40810/60befc8aEf3532b70/1425dee17628e748.jpg',
-					name: '李宁篮球鞋男鞋新品驭帅15男子减震回弹中帮篮球专业比赛鞋运动鞋鞋子官方旗舰网ABAR043 黑色/蝴蝶蓝-8 43',
-					pprice: '699.00',
-					oprice: '699.00',
-					discount: '满469减50'
-				},
-				{
-					id: 8,
-					imgUrl: 'https://img13.360buyimg.com/n7/jfs/t1/38352/13/17539/589320/62ebf6bdEed8488c9/626787a9cf1ebb58.png',
-					name: 'Rianne.He 2022夏季新款户外骑行纯色连帽拉链透气防紫外线薄款冰丝女防晒衣 悦动粉 M',
-					pprice: '126.00',
-					oprice: '126.00',
-					discount: '满100减20'
-				}
+				// {
+				// 	id: 5,
+				// 	imgUrl: 'https://img14.360buyimg.com/n1/jfs/t1/162051/30/29828/234714/62f6752bEc6bbe9a9/86c56312f486abb6.jpg',
+				// 	name: '李宁篮球鞋男2022新品中帮专业比赛鞋官方旗舰网ABAS027 月白蓝/标准白-4 42',
+				// 	pprice: '799.00 ',
+				// 	oprice: '3890.00',
+				// 	discount: '满469减80'
+				// },
+				// {
+				// 	id: 6,
+				// 	imgUrl: 'https://img11.360buyimg.com/n7/jfs/t1/22526/3/19193/50973/62f6267cEe76048de/b2b76bd6da7ff3f3.jpg',
+				// 	name: '阿迪达斯（Adidas）短裤男 新款透气舒适百搭休闲五分裤运动短裤 五分裤-小LOGO L',
+				// 	pprice: '129.00',
+				// 	oprice: '129.00',
+				// 	discount: '每满200减30'
+				// },
+				// {
+				// 	id: 7,
+				// 	imgUrl: 'https://img11.360buyimg.com/n1/jfs/t1/188134/20/7134/40810/60befc8aEf3532b70/1425dee17628e748.jpg',
+				// 	name: '李宁篮球鞋男鞋新品驭帅15男子减震回弹中帮篮球专业比赛鞋运动鞋鞋子官方旗舰网ABAR043 黑色/蝴蝶蓝-8 43',
+				// 	pprice: '699.00',
+				// 	oprice: '699.00',
+				// 	discount: '满469减50'
+				// },
+				// {
+				// 	id: 8,
+				// 	imgUrl: 'https://img13.360buyimg.com/n7/jfs/t1/38352/13/17539/589320/62ebf6bdEed8488c9/626787a9cf1ebb58.png',
+				// 	name: 'Rianne.He 2022夏季新款户外骑行纯色连帽拉链透气防紫外线薄款冰丝女防晒衣 悦动粉 M',
+				// 	pprice: '126.00',
+				// 	oprice: '126.00',
+				// 	discount: '满100减20'
+				// }
 			],
 			isShow: false,
 			animationData: {},
 			goodsContent: {},
 			num: 1,
 			//由立即购买拉起蒙层
-			iskeyc:false,
+			iskeyc: false
 		};
 	},
 	methods: {
@@ -117,10 +117,10 @@ export default {
 				animation.translateY(0).step();
 				this.animationData = animation.export();
 			}, 200);
-			console.log(this.iskeyc)
-			if(key=='key'){
-				this.iskeyc = true
-				console.log('show:'+this.iskeyc)
+			console.log(this.iskeyc);
+			if (key == 'key') {
+				this.iskeyc = true;
+				console.log('show:' + this.iskeyc);
 			}
 		},
 		hidePop() {
@@ -165,7 +165,8 @@ export default {
 				header: {
 					token: true
 				}
-			}).then((res) => {
+			})
+				.then(res => {
 					//隐藏弹出框
 					this.hidePop();
 					//提示信息
@@ -173,12 +174,13 @@ export default {
 						title: '成功加入购物车',
 						icon: 'none'
 					});
-					if(this.iskeyc == true){
-						this.iskeyc = false
-						this.goShopCar()
+					if (this.iskeyc == true) {
+						this.iskeyc = false;
+						this.goShopCar();
 					}
-				}).catch((rej) => {
-					console.log(rej)
+				})
+				.catch(rej => {
+					console.log(rej);
 					uni.showToast({
 						title: '添加成功',
 						icon: 'none'
@@ -198,7 +200,25 @@ export default {
 			uni.navigateTo({
 				url: '../../pages/payment/payment'
 			});
+		},
+		//返回推荐商品
+		_introduce() {
+			http.request({ url: '/introduce' })
+				.then(res => {
+					res.map(v => {
+					// console.log(v.id);
+					return this.dataList.push(v)});					
+				})
+				.catch(() => {
+					uni.showToast({ title: '请求失败' });
+				});
 		}
+	},
+	onReady() {
+		this._introduce();
+	},
+	onReachBottom() {
+		this._introduce();
 	},
 	onBackPress() {
 		if (this.isShow) {
@@ -242,7 +262,7 @@ export default {
 	//发送给朋友
 	onShareAppMessage(res) {
 		return {
-			title: this.goods.name,
+			title: this.goodsContent.name,
 			path: `/pages/detail/detail?id=${this.goodsContent.id}`,
 			mpId: 'wx89df7571873b5625',
 			imageUrl: this.goodsContent.imageUrl,
@@ -262,7 +282,7 @@ export default {
 	//分享到朋友圈
 	onShareTimeline(res) {
 		return {
-			title: this.goods.name,
+			title: this.goodsContent.name,
 			type: 0,
 			query: 0,
 			summary: this.goodsContent.name,
@@ -299,14 +319,14 @@ swiper {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 90rpx;
+	height: 140rpx;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: #ffffff;
 	.iconfont {
-		width: 60rpx;
-		height: 60rpx;
+		width: 80rpx;
+		height: 80rpx;
 		border-radius: 100%;
 		background-color: #ffa617;
 		color: #ffffff;
@@ -317,18 +337,28 @@ swiper {
 		align-items: center;
 	}
 	.add-shopcart {
-		margin: 0 40rpx;
+		margin: 0 30rpx;
 		padding: 6rpx 30rpx;
 		background-color: #ff7417;
 		color: #ffffff;
 		border-radius: 40rpx;
+		height: 60rpx;
+		vertical-align: middle;
+		line-height: 60rpx;
+		font-size: 37rpx;
+		text-align: center;
 	}
 	.purchase {
-		margin: 0 40rpx;
-		padding: 6rpx 30rpx;
+		margin: 0 20rpx;
+		padding: 6rpx 35rpx;
 		background-color: #49bdfb;
 		color: #ffffff;
 		border-radius: 40rpx;
+		height: 60rpx;
+		vertical-align: middle;
+		line-height: 60rpx;
+		font-size: 37rpx;
+		text-align: center;
 	}
 }
 .pop {

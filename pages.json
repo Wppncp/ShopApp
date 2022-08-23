@@ -127,6 +127,7 @@
             "style" :                                                                                    
             {
                 "navigationBarTitleText": "商品详情",
+				"onReachBottomDistance": 20,
                 "app-plus": {
                 	"titleNView": {
                 		"type": "transparent",
@@ -260,6 +261,20 @@
 		"navigationBarBackgroundColor": "#fff",
 		"backgroundColor": "#F8F8F8"
 	},
+	"subPackages": [
+		// {
+		// 	"root": "packagePages", // 当前分包的根目录文件
+		// 	"pages": [
+		// 		{"path": "pages/index"}  // 当前包的页面配置
+		// 	]
+		// }
+	],
+	"preloadRule": {
+			// "packagePages/index/index": {// 分包中的主目录
+			// 	"network": "all",// 默认all，即适用所有网络都下载分包
+			// 	"packages": ["__APP__"]// 进入packagePages/index/index后，加载整个项目
+			// }
+		},
 	// "tabBar": {
 	// 	"selectedColor": "#2695bf",
 	// 	"spacing": "8rpx",

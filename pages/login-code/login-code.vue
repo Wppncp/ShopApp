@@ -41,7 +41,9 @@
 		},
 		onReady() {
 			this.codeMsg = '重新发送（'+this.codeNum+'）';
-			alert('来自login-code.vue测试码：1111')
+			uni.showModal({
+				content:'来自login-code.vue测试码：1111'
+			})
 			// this.sendCode();
 		},
 		methods: {

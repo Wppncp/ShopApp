@@ -4,7 +4,7 @@
 		<view class='my-header'>
 			<view class='header-main'>
 				<view class='header-config' @tap="goConfig">
-					<image class='config-img' src="../../static/img/config.png" mode=""></image>
+					<image class='config-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/config.png" mode=""></image>
 				</view>
 				<view class='header-logo' @tap="goLogin">
 					<image class='logo-img' :src="loginStatus?userInfo.imgUrl:''" mode=""></image>
@@ -20,23 +20,23 @@
 			</view>
 			<view class='order-list'>
 				<view class='order-item'>
-					<image  class='order-img' src="../../static/img/order1.png" mode=""></image>
+					<image  class='order-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/order1.png" mode=""></image>
 					<view>待付款</view>
 				</view>
 				<view class='order-item'>
-					<image  class='order-img' src="../../static/img/order2.png" mode=""></image>
+					<image  class='order-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/order2.png" mode=""></image>
 					<view>待付款</view>
 				</view>
 				<view class='order-item'>
-					<image  class='order-img' src="../../static/img/order3.png" mode=""></image>
+					<image  class='order-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/order3.png" mode=""></image>
 					<view>待付款</view>
 				</view>
 				<view class='order-item'>
-					<image  class='order-img' src="../../static/img/order4.png" mode=""></image>
+					<image  class='order-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/order4.png" mode=""></image>
 					<view>待付款</view>
 				</view>
 				<view class='order-item'>
-					<image  class='order-img' src="../../static/img/order5.png" mode=""></image>
+					<image  class='order-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/order5.png" mode=""></image>
 					<view>待付款</view>
 				</view>
 			</view>

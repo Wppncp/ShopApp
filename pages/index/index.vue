@@ -1,8 +1,8 @@
 <template>
 	<view class="index">
 		<!-- #ifdef MP-WEIXIN -->
-		<view class="wx-nav">
-			<view class="iconfont icon-fangdajing" @click="searchEnter"></view>
+		<view class="wx-nav" @click="searchEnter">
+			<view class="iconfont icon-fangdajing" ></view>
 			<!-- <text>好物多</text> -->
 			<view class="iconfont icon-xiaoxi"></view>
 		</view>
@@ -99,7 +99,7 @@ export default {
 	onReady() {
 		uni.getSystemInfo({
 			success: res => {
-				this.clentHeight = res.windowHeight - uni.upx2px(80)-this.getClentHeight()
+				this.clentHeight = res.windowHeight -this.getClentHeight()// - uni.upx2px(80)				
 			}
 		})
 	},

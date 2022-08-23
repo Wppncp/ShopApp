@@ -130,7 +130,11 @@
         "permission" : {},
         "uniStatistics" : {
             "enable" : true
-        }
+        },
+		"optimization": {
+		    "subPackages": true
+		},
+		"lazyCodeLoading": "requiredComponents"
     },
     "mp-alipay" : {
         "usingComponents" : true
@@ -142,7 +146,8 @@
         "usingComponents" : true
     },
     "uniStatistics" : {
-        "enable" : false
+        "enable" : false,
+        "version" : "2"
     },
     "vueVersion" : "2",
     "h5" : {

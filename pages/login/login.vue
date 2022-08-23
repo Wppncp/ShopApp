@@ -7,7 +7,7 @@
 					<view class='login-tel'>
 						<view class='tel-main'>
 							<view class='close' @tap='goBack'>
-								<image class='close-img' src="../../static/img/close.png" mode=""></image>
+								<image class='close-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/close.png" mode=""></image>
 							</view>
 							<view class='logo'>
 								<image class='logo-img' src="https://tse4-mm.cn.bing.net/th/id/OIP-C.04ONw7ABFCO6u0ywj_I4_wHaE7?pid=ImgDet&rs=1" mode=" scaleToFill"></image>
@@ -16,7 +16,7 @@
 							<LoginOther></LoginOther>
 							<view class='login-go'>
 								<view>已有账号，去登录</view>
-								<image src="../../static/img/down.png" mode=""></image>
+								<image src="https://gitee.com/l7788/shopApp/raw/master/static/img/down.png" mode=""></image>
 							</view>
 						</view>
 					</view>
@@ -28,10 +28,10 @@
 						<view class='tel-main'>
 							<view class='close close-center'>
 								<view @tap='goBack'>
-									<image class='close-img' src="../../static/img/close.png" mode=""></image>
+									<image class='close-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/close.png" mode=""></image>
 								</view>
 								<view class='login-go'>
-									<image class='close-img' src="../../static/img/up.png" mode=""></image>
+									<image class='close-img' src="https://gitee.com/l7788/shopApp/raw/master/static/img/up.png" mode=""></image>
 									<view>没有账号，去注册</view>
 								</view>
 								<view></view>

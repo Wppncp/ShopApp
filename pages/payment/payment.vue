@@ -7,7 +7,7 @@
 			<radio-group>
 				<label for="">
 					<view class="pay-item">
-						<image class="pay-img" src="../../static/img/zfb.png" mode=""></image>
+						<image class="pay-img" src="https://gitee.com/l7788/shopApp/raw/master/static/img/zfb.png" mode=""></image>
 						<view>
 							<view>支付宝支付</view>
 							<view class="pay-txt">推荐支付宝用户使用</view>
@@ -20,7 +20,7 @@
 				</label>
 				<label for="">
 					<view class="pay-item">
-						<image class="pay-img" src="../../static/img/wxf.png" mode=""></image>
+						<image class="pay-img" src="https://gitee.com/l7788/shopApp/raw/master/static/img/wxf.png" mode=""></image>
 						<view>
 							<view>微信支付</view>
 							<view class="pay-txt">由于权限微信暂不支持,深感抱歉</view>

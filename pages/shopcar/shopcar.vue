@@ -54,7 +54,7 @@
 		<template v-else>
 			<!-- 头部导航栏 -->
 			<uni-nav-bar title="购物车"></uni-nav-bar>
-			<view class="shop-list"><image src="../../static/img/carnone.png" mode="" style="margin: 50% 10%;"></image></view>
+			<view class="shop-list"><image src="https://gitee.com/l7788/shopApp/raw/master/static/img/carnone.png" mode="" style="margin: 50% 10%;"></image></view>
 		</template>
 
 		<Tabbar cureentPage="shopcar"></Tabbar>
